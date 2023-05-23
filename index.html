@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+  <head>
+    <meta charset="utf-8" content="notranslate" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Must FinTech </title>
+    <meta name="description" content="Must Fin Tech Task" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/myStyle.css" />
+  </head>
+  <body>
+    <div class="body-container">
+      <img src="./assets/logo.svg" alt="Logo Not Found" />
+
+      <div class="button-container">
+        <div class="button-row">
+          <button class="button btn-1 active" onclick="showDiv(0)">
+            기본정보 관리
+          </button>
+          <button class="button" onclick="showDiv(1)">투자유형 관리</button>
+          <button class="button" onclick="showDiv(2)">입출금내역 조회</button>
+          <button class="button" onclick="showDiv(3)">영업내역 조회</button>
+          <button class="button" onclick="showDiv(4)">투자내역 조회</button>
+          <button class="button" onclick="showDiv(5)">채권내역 조회</button>
+          <button class="button" onclick="showDiv(6)">SMS 관리</button>
+          <button class="button" onclick="showDiv(7)">상담내역 관리</button>
+          <button class="button btn-8" onclick="showDiv(8)">
+            1:1문의내역 조회
+          </button>
+        </div>
+      </div>
+
+
+      <div class="header-dropdown">
+        <div>
+          <h2 class="heading">신청 목록</h2>
+          <span class="sub-heading">(총 100명 | 승인대기 1건)</span>
+        </div>
+        <div class="dropdown-container">
+          <div class="dropdown">
+            <div>
+              <button class="dropdown-toggle" onclick="dropdownToggle(0)">
+                승인여부 전체
+              </button>
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </div>
+            <ul class="dropdown-menu" id="dropdownMenu0">
+              <li class="dropdown-item">승인여부 전체</li>
+              <li class="dropdown-item">승인완료</li>
+              <li class="dropdown-item">승인대기</li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <div>
+              <button class="dropdown-toggle" onclick="dropdownToggle(1)">
+                신청일시순
+              </button>
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </div>
+            <ul class="dropdown-menu" id="dropdownMenu1">
+              <li class="dropdown-item">신청일시순</li>
+              <li class="dropdown-item">승인일시순</li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <div>
+              <button class="dropdown-toggle" onclick="dropdownToggle(2)">
+                승인완료
+              </button>
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </div>
+            <ul class="dropdown-menu" id="dropdownMenu2">
+              <li class="dropdown-item">승인완료</li>
+              <li class="dropdown-item">승인거부</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-dropdown header-dropdown-two">
+        <button class="header-btn" id="registractionBtn">등록</button>
+        <div>
+          <span class="sub-heading">선택한 0건</span>
+          <div class="dropdown-container">
+            <div class="dropdown">
+              <div>
+                <button
+                  class="dropdown-toggle"
+                  id="dropdownToggle"
+                  onclick="dropdownToggle(3)"
+                >
+                  승인여부 전체
+                </button>
+                <span class="dropdown-arrow">
+                  <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+                </span>
+              </div>
+              <ul class="dropdown-menu" id="dropdownMenu3">
+                <li class="dropdown-item">승인여부 전체</li>
+                <li class="dropdown-item">승인완료</li>
+                <li class="dropdown-item">승인대기</li>
+              </ul>
+            </div>
+
+            <button class="header-btn">저장</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="registractionModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-head">
+            <h2>
+              <p>투자유형 변경</p>
+            </h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-container">
+            <div class="modalBody">
+              <div class="modal-input">
+                <h3>회원번호</h3>
+                <input type="text" id="memberNumber" placeholder="회원번호" />
+              </div>
+              <div class="modal-input">
+                <h3>회원명/법인명</h3>
+                <input
+                  type="text"
+                  id="memberNumber"
+                  placeholder="회원명/법인명"
+                />
+              </div>
+              <div class="modal-input">
+                <h3>
+                  투자유형
+                  <div class="required"></div>
+                </h3>
+                <div class="header-dropdown header-dropdown-two">
+                  <div class="dropdown-container">
+                    <div class="dropdown">
+                      <div>
+                        <button
+                          class="dropdown-toggle"
+                          id="dropdownToggle"
+                          onclick="dropdownToggle(4)"
+                        >
+                          일반개인
+                        </button>
+                        <span class="dropdown-arrow">
+                          <img
+                            src="./assets/dropdown_arrow.svg"
+                            alt="No Icon Found"
+                          />
+                        </span>
+                      </div>
+                      <ul class="dropdown-menu user-list" id="dropdownMenu4">
+                        <li class="dropdown-item">소득적격</li>
+                        <li class="dropdown-item">개인전문</li>
+                        <li class="dropdown-item">여신금융</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-input">
+                <h3>
+                  서류첨부
+                  <div class="required"></div>
+                </h3>
+                <label for="documentUpload" class="upload-button">
+                  <span class="upload-button-text">파일 선택</span>
+                </label>
+                <input
+                  type="file"
+                  id="documentUpload"
+                  onchange="handleFileSelect(event)"
+                />
+                <div id="uploadedFileSection"></div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <ul>
+                <li>파일 형식은 jpg, jpeg, gif, png, pdf만 가능합니다.</li>
+                <li>최대 10개, 100MB까지 등록이 가능합니다.</li>
+              </ul>
+            </div>
+            <div class="modal-footer-buttons">
+              <button onclick="showLoader(this)" id="successBtn">저장</button>
+              <button>취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="successModal" class="modal successModal">
+        <div class="modal-content">
+          <div class="modal-head success-head">
+            <img src="./assets/success.svg" alt="No Icon Found" />
+            <span class="close" id="success-span" onclick="hideDialog()"
+              >&times;</span
+            >
+          </div>
+          <div class="success-message">
+            <h2>저장되었습니다</h2>
+            <div class="modal-footer-buttons">
+              <button>확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="inqueryModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-head">
+            <h2>
+              <p>승인거부 사유 입력</p>
+            </h2>
+            <span class="close" onclick="closeInqueryTab()">&times;</span>
+          </div>
+          <div class="modal-container">
+            <div class="modalBody">
+              <div class="modal-input">
+                <h3>회원번호</h3>
+                <input type="text" id="memberNumber" placeholder="회원번호" />
+              </div>
+              <div class="modal-input">
+                <h3>회원명/법인명</h3>
+                <input
+                  type="text"
+                  id="memberNumber"
+                  placeholder="김길동, ㈜가나다라투자"
+                />
+              </div>
+              <div class="modal-input">
+                <h3 class="inquery-label">
+                  승인거부 사유
+                  <div class="required inquery-req"></div>
+                </h3>
+                <div class="checkbox-list">
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox1"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">서류 식별 불가</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox2"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">필수 서류 누락</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox3"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label"
+                      >서류의 내용이 등록된 회원정보와 다름</span
+                    >
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox5"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">서류의 유효기간이 초과됨</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox6"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">직접 입력</span>
+                  </label>
+
+                  <textarea
+                    id="reasonTextArea"
+                    class="reason-textarea"
+                    placeholder="사유를 입력하세요"
+                    disabled
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer-buttons">
+              <button onclick="successDialog()" id="successBtn">저장</button>
+              <button>취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="div0">
+        <div class="table-container">
+          <table id="myTable">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll" /></th>
+                <th>No</th>
+                <th>기존유형</th>
+                <th>신청유형</th>
+                <th>제출서류</th>
+                <th>신청일시</th>
+                <th>승인여부</th>
+                <th>승인거부 사유</th>
+                <th>승인일시</th>
+                <th>승인일시</th>
+                <th>관리자</th>
+                <th>标签1</th>
+                <th>标签2</th>
+                <th>标签3</th>
+                <th>标签4</th>
+                <th>标签5</th>
+                <th>标签6</th>
+                <th>标签7</th>
+                <th>标签8</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="firstPage">
+            <img src="./assets/jumpToLeft.svg" alt="Icon Not Found" />
+          </button>
+          <button id="prevPage" disabled>
+            <img src="./assets/left.svg" alt="Icon Not Found" />
+          </button>
+          <div id="paginationNumbers"></div>
+          <button id="nextPage">
+            <img src="./assets/right.svg" alt="Icon Not Found" />
+          </button>
+          <button id="lastPage">
+            <img src="./assets/jumpToRight.svg" alt="Icon Not Found" />
+          </button>
+        </div>
+      </div>
+
+      <div id="div1">
+        <div class="table-container">
+          <table id="myTable1">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll" /></th>
+                <th>No</th>
+                <th>기존유형</th>
+                <th>신청유형</th>
+                <th>제출서류</th>
+                <th>신청일시</th>
+                <th>승인여부</th>
+                <th>승인거부 사유</th>
+                <th>승인일시</th>
+                <th>승인일시</th>
+                <th>관리자</th>
+                <th>标签1</th>
+                <th>标签2</th>
+                <th>标签3</th>
+                <th>标签4</th>
+                <th>标签5</th>
+                <th>标签6</th>
+                <th>标签7</th>
+                <th>标签8</th>
+              </tr>
+            </thead>
+
+            <tbody class="tab-two-table">
+              <tr class="no-data">
+                <td colspan="13">조회 결과가 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="firstPage">
+            <img src="./assets/jumpToLeft.svg" alt="Icon Not Found" />
+          </button>
+          <button id="prevPage" disabled>
+            <img src="./assets/left.svg" alt="Icon Not Found" />
+          </button>
+          <div id="paginationNumbers"></div>
+          <button id="nextPage">
+            <img src="./assets/right.svg" alt="Icon Not Found" />
+          </button>
+          <button id="lastPage">
+            <img src="./assets/jumpToRight.svg" alt="Icon Not Found" />
+          </button>
+        </div>
+      </div>
+
+      <div id="div2">没有找到内容</div>
+      <div id="div3">没有找到内容</div>
+      <div id="div4">没有找到内容</div>
+      <div id="div5">没有找到内容</div>
+      <div id="div6">没有找到内容</div>
+      <div id="div7">没有找到内容</div>
+      <div id="div8">没有找到内容</div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
