@@ -568,6 +568,17 @@ input[type="checkbox"]:checked {
 }
 
 .checkbox input[type="checkbox"]:checked + .checkbox-custom:before {
+  background-color: #2A3958 !important;
+  border-color: #ccc;
+  content: '\2713';
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  color: white;
+  font-size: smaller;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-custom:before {
   background-color: #ccc;
   border-color: #ccc;
 }
